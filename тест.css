@@ -1,0 +1,99 @@
+body {
+  margin: 0; /* Убираем отступы по умолчанию */
+  height: 100vh; /* Растягиваем body на всю высоту экрана */
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4); /* Градиент */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif; /* Шрифт */
+  color: #333; /* Цвет текста */
+  overflow: hidden;
+}
+
+/* Стили для заголовка */
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+/* Контейнер для рыбки */
+.fish {
+  position: relative;
+  width: 100px; /* Ширина рыбки */
+  height: 50px; /* Высота рыбки */
+  animation: swim 3s ease-in-out infinite; /* Анимация плавания */
+}
+
+/* Тело рыбки */
+.body {
+  width: 80px;
+  height: 40px;
+  background-color: #ffcc00; /* Цвет тела рыбки */
+  border-radius: 20px; /* Скругление углов */
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+/* Глаз рыбки */
+.eye {
+  width: 10px;
+  height: 10px;
+  background-color: #000; /* Цвет глаза */
+  border-radius: 50%; /* Круглая форма */
+  position: absolute;
+  top: 15px;
+  left: 64px;
+}
+
+/* Хвост рыбки */
+.tail {
+  width: 50px;
+  height: 40px;
+  background-color: #ffcc00; /* Цвет хвоста */
+  clip-path: polygon(0 0, 100% 50%, 0 100%); /* Форма хвоста */
+  position: absolute;
+  top: 5px;
+  left: -15px;
+}
+
+/* Верхний плавник */
+.fin-top {
+  width: 40px;
+  height: 10px;
+  background-color: #1baca5; /* Цвет плавника */
+  clip-path: polygon(0% 100%, 50% 10%, 100% 100%); /* Форма плавника */
+  position: absolute;
+  top: -4px; /* Положение плавника */
+  left: 40px; /* Положение плавника */
+}
+
+/* Нижний плавник */
+.fin-bottom {
+  width: 30px;
+  height: 10px;
+  background-color: #3fd9db; /* Цвет плавника */
+  clip-path: polygon(0 0, 50% 100%, 100% 0); /* Форма плавника */
+  position: absolute;
+  bottom: -4px; /* Положение плавника */
+  left: 30px; /* Положение плавника */
+}
+
+/* Анимация движения сверху вниз */
+@keyframes swim {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(30px); /* Движение вниз */
+  }
+  100% {
+      transform: translateY(0); /* Возврат в исходное положение */
+  }
+}
